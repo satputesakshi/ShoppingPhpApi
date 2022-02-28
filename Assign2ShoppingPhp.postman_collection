@@ -1,0 +1,681 @@
+{
+	"info": {
+		"_postman_id": "826c9d03-fb93-4380-90cf-aa4f9b2bdec7",
+		"name": "Assign2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully retreived product list\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/products/read.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"products",
+								"read.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully adding product returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"custName\": \"Zeel\",\r\n        \"prodPrice\": 50,\r\n        \"produrl\": \"https://www.highsnobiety.com/static-assets/thumbor/wt0zfQ7ZOOSbMC2cNISN9EhIAXA=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2020/06/25142245/jordan-1-smoke-grey-main.jpg\",\r\n        \"prodDesc\": \"Best red shoes\",\r\n        \"rate\": \"4.2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/products/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"products",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully updating products returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"id\": \"5\",\r\n        \"custName\": \"Ashok\",\r\n        \"prodPrice\": 500,\r\n        \"produrl\": \"https://www.highsnobiety.com/static-assets/thumbor/wt0zfQ7ZOOSbMC2cNISN9EhIAXA=/1600x1067/www.highsnobiety.com/static-assets/wp-content/uploads/2020/06/25142245/jordan-1-smoke-grey-main.jpg\",\r\n        \"prodDesc\": \"Best red shoes\",\r\n        \"rate\": \"4.2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/products/update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"products",
+								"update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully deleting product returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"5\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/products/delete.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"products",
+								"delete.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Cart List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully displaying cart returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/cart/read.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"cart",
+								"read.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully created cart returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \r\n        \"userId\": \"2\",\r\n        \"productId\": \"3\",\r\n        \"quantity\": \"5\",\r\n        \"shipping\": \"50\",\r\n        \"total\": \"600\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/cart/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"cart",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully updated cart returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"cartId\": \"1\",\r\n        \"userId\": \"2\",\r\n        \"productId\": \"3\",\r\n        \"quantity\": \"8\",\r\n        \"shipping\": \"50\",\r\n        \"total\": \"1000\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/cart/update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"cart",
+								"update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cart Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully deleted cart returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"cartId\": \"1\"\r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/cart/delete.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"cart",
+								"delete.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Review List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully displayed review list returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/review/read.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"review",
+								"read.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully review created returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \r\n        \"productId\": \"2\",\r\n        \"custName\": \"Poo\",\r\n        \"rate\": \"4\",\r\n        \"comment\": \"Love it\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/review/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"review",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully updating review returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \r\n        \"productId\": \"2\",\r\n        \"reviewId\": \"1\",\r\n        \"custName\": \"Purva\",\r\n        \"rate\": \"4\",\r\n        \"comment\": \"Love it\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/review/update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"review",
+								"update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Review Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully deleting review returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \r\n        \"productId\": \"2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/review/delete.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"review",
+								"delete.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Customer List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully retreived customer list returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/customer/read.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"customer",
+								"read.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully created customer returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"custName\": \"Purva Parashar\",\r\n        \"email\": \"poo@gmail.com\",\r\n        \"custPswd\": \"admin123\",\r\n        \"dob\": \"2012-02-22\",\r\n        \"addLine1\": \"lester st\",\r\n        \"city\": \"waterloo\",\r\n        \"province\": \"ontario\",\r\n        \"zip\": \"N2L0B5\",\r\n        \"country\": \"Canada\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/customer/create.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"customer",
+								"create.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully updated customer details returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \"custId\": \"2\",\r\n        \"custName\": \"Purva Parashar\",\r\n        \"email\": \"poointhehouse@gmail.com\",\r\n        \"custPswd\": \"admin123\",\r\n        \"dob\": \"2012-02-27\",\r\n        \"addLine1\": \"lester st\",\r\n        \"city\": \"waterloo\",\r\n        \"province\": \"ontario\",\r\n        \"zip\": \"N2L0B5\",\r\n        \"country\": \"Canada\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/customer/update.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"customer",
+								"update.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successfully customer deleted returns 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n       \"custId\": \"2\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/ShoppingCart/api/customer/delete.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"ShoppingCart",
+								"api",
+								"customer",
+								"delete.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
